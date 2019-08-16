@@ -24,6 +24,7 @@ VALUES
     ("Guitar Hero", "Electronics", 59.99, 24),
     ("Faith + 1 CD", "Electronics", 9.99, 500),
     ("Toshiba HandiBook", "Electronics", 199.99, 50),
-    ("Limey Charles Worcestershire Sauce", "Groceries", 9.99, 288);
+    ("Limey Charles Worcestershire Sauce", "Groceries", 9.99, 288),
+    ("Chinpokomon Toy", "Toys & Games", 4.99, 750); 
     
     SELECT * FROM products
