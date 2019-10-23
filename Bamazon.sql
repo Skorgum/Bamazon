@@ -26,5 +26,3 @@ VALUES
     ("Toshiba HandiBook", "Electronics", 199.99, 50),
     ("Limey Charles Worcestershire Sauce", "Groceries", 9.99, 288),
     ("Chinpokomon Toy", "Toys & Games", 4.99, 750); 
-    
-    SELECT * FROM products
