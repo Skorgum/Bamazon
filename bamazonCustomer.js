@@ -9,11 +9,11 @@ const connection = mysql.createConnection({
     database: "bamazon"
 });
 
-connection.connect(function(err) {
-    if (err) throw err;
+// connection.connect(function(err) {
+//     if (err) throw err;
 
     console.log("【ツ】" + "\nNow connected to Bamazon Database - Customer Application")
-});
+// });
 
 // runBamazon will execute the main application logic
 function runBamazon() {
@@ -126,7 +126,7 @@ function displayInventory() {
             output += 'Qty: ' + data[i].stock_quantity + '  //  '
 			output += 'Price: $' + data[i].price + '\n';
 
-			console.log(strOut);
+			console.log(output);
 		};
 
 	  	console.log("---------------------------------------------------------------------\n");

@@ -9,11 +9,11 @@ const connection = mysql.createConnection({
     database: "bamazon"
 });
 
-connection.connect(function (err) {
-    if (err) throw err;
+// connection.connect(function (err) {
+//     if (err) throw err;
 
-    console.log("【ツ】" + "\nNow connected to Bamazon Database - Manager Application")
-});
+//     console.log("【ツ】" + "\nNow connected to Bamazon Database - Manager Application")
+// });
 
 function runBamazon() {
     managerPrompt();
@@ -26,8 +26,8 @@ function managerPrompt() {
         {
             type: "list",
             name: "option",
-            message: "Please select an option:",
-            choices: ["View Products for Sale", "View Low Inventory", "Add to Inventory", "Add New Product"],
+            message: "Welcome to the Bamazon Manager Application.  Please select an option:",
+            choices: ["View Products for Sale", "View Low Inventory", "Add to Inventory", "Add New Product",],
             filter: function (val) {
                 if (val === "View Products for Sale") {
                     return "sale";
@@ -68,7 +68,7 @@ function displayInventory() {
         if (err) throw err;
 
         console.log("Existing Inventory: ");
-        console.log("------------------------\n");
+        console.log("---------------------------------------------------------------------\n");
 
         let output = "";
         for (var i = 0; i < data.length; i++) {
@@ -95,7 +95,7 @@ function displayLowInventory() {
         if (err) throw err;
 
         console.log("Low Inventory Items (less than 5):  ")
-        console.log("------------------------\n");
+        console.log("---------------------------------------------------------------------\n");
 
         let output = "";
         for (var i = 0; i < data.length; i++) {
@@ -174,8 +174,61 @@ function addInventory() {
                 console.log("Updating Inventory...");
 
                 // Query string to update the SQL db
-                let updateQueryStr = "UPDATE products SET stock_quantity = " + (productData.stock_quantity + addQuantity) + "WHERE item_id = " + item;
-            }
+                let updateQueryStr = 'UPDATE products SET stock_quantity = ' + (productData.stock_quantity + addQuantity) + ' WHERE item_id = ' + item;
+
+                connection.query(updateQueryStr, function(err, data) {
+                    if (err) throw err;
+
+                    console.log('Stock count for Item ID ' + item + ' has been updated to ' + (productData.stock_quantity + addQuantity) + '.');
+                    console.log("---------------------------------------------------------------------\n");
+
+                    connection.end();
+                });
+            };
+        });
+    });
+};
+
+function createNewProduct() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "product_name",
+            message: "Please enter the product name."
+        },
+        {
+            type: "input",
+            name: "department_name",
+            message: "Please enter the department name."
+        },
+        {
+            type: "input",
+            name: "price",
+            message: "Please enter the product price.",
+            validate: validateNumber
+        },
+        {
+            type: "input",
+            name: "stock_quantity",
+            message: "Please enter the quantity.",
+            validate: validateInteger
+        }
+    ]).then(function(input) {
+        console.log('Adding New Item: \n    Product Name = ' + input.product_name + '\n' +  
+									   '    Department Name = ' + input.department_name + '\n' +  
+									   '    Price = $' + input.price + '\n' +  
+                                       '    Quantity = ' + input.stock_quantity);
+
+        //   Query string to insert into SQL db
+        let queryStr = "INSERT INTO products SET ?";
+
+        connection.query(queryStr, input, function (error, results, fields) {
+            if (error) throw error;
+
+            console.log("New product has been added successfully under Item ID " + results.insertId + ".");
+            console.log("---------------------------------------------------------------------\n");
+
+            connection.end()
         })
     })
 }
