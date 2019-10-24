@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
 connection.connect(function(err) {
     if (err) throw err;
 
-    console.log("【ツ】" + "\nNow connected to Bamazon Database")
+    console.log("【ツ】" + "\nNow connected to Bamazon Database - Customer Application")
 });
 
 // runBamazon will execute the main application logic
@@ -38,21 +38,20 @@ function validateInput(value) {
 
 // promptUserPurchase will prompt the user for the item/quantity they would like to purchase
 function promptUserPurchase() {
-	// console.log('___ENTER promptUserPurchase___');
 
 	// Prompt the user to select an item
 	inquirer.prompt([
 		{
 			type: 'input',
 			name: 'item_id',
-			message: 'Please enter the Item ID which you would like to purchase.',
+			message: 'Please enter the Item ID of the item that you would like to purchase.',
 			validate: validateInput,
 			filter: Number
 		},
 		{
 			type: 'input',
 			name: 'quantity',
-			message: 'How many do you need?',
+			message: 'How many would you like to purchase?',
 			validate: validateInput,
 			filter: Number
 		}
@@ -91,17 +90,17 @@ function promptUserPurchase() {
 
 						// End the database connection
 						connection.end();
-					})
+					});
 				} else {
 					console.log('Sorry, there is not enough product in stock.');
 					console.log('Please enter a smaller number.');
 					console.log("\n---------------------------------------------------------------------\n");
 
 					displayInventory();
-				}
-			}
-		})
-	})
+				};
+			};
+		});
+	});
 };
 
 // displayInventory will retrieve the current inventory from the database and output it to the console
@@ -118,21 +117,21 @@ function displayInventory() {
 		console.log('Existing Inventory: ');
 		console.log('...................\n');
 
-		var strOut = '';
+		var output = '';
 		for (var i = 0; i < data.length; i++) {
-			strOut = '';
-			strOut += 'Item ID: ' + data[i].item_id + '  //  ';
-			strOut += 'Product Name: ' + data[i].product_name + '  //  ';
-            strOut += 'Dpt: ' + data[i].department_name + '  //  ';
-            strOut += 'Qty: ' + data[i].stock_quantity + '  //  '
-			strOut += 'Price: $' + data[i].price + '\n';
+			output = '';
+			output += 'Item ID: ' + data[i].item_id + '  //  ';
+			output += 'Product Name: ' + data[i].product_name + '  //  ';
+            output += 'Dpt: ' + data[i].department_name + '  //  ';
+            output += 'Qty: ' + data[i].stock_quantity + '  //  '
+			output += 'Price: $' + data[i].price + '\n';
 
 			console.log(strOut);
-		}
+		};
 
 	  	console.log("---------------------------------------------------------------------\n");
 
 	  	//Prompt the user for item/quantity they would like to purchase
 	  	promptUserPurchase();
-	})
-}
+	});
+};
