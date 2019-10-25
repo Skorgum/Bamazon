@@ -18,64 +18,59 @@ To run the Manager interface, run `node bamazonManager.js`
 
 When the application is started, the user will be presented with the current inventory and will be asked what item they would like to purchase
 
-<Image Placeholder>
+![Customer01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Customer01.JPG)
 
 After selecting the desired item, the user will be asked how many items they would like:
 
-<Image Placeholder>
+![Customer02.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Customer02.JPG)
 
 If there is insufficient quantity, the user will be presented with the following:
 
-<Image Placeholder>
+![Customer03.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Customer03.JPG)
 
 If there is sufficient quantity, it will be deducted from the database & the following will be displayed:
 
-<Image Placeholder>
+![Customer04.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Customer04.JPG)
 
 ### Manager Interface
 
-When the application is started, the user will be presented with the following options:
+When the application is started, the user will be presented with the following menu options:
+
+![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
 
 1. View Products for Sale
    
 The user will be presented with a list of the current inventory:
 
-<Image Placeholder>
+![Manager02.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager02.JPG)
 
 2. View Low Inventory
 
 The user will be presented with a list of all items that have less than 5 in stock (if any):
 
-<Image Placeholder>
+![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
 
 3. Add to Inventory
 
 The user will be prompted for the Item ID of the product that is to be restocked:
 
-<Image Placeholder>
+![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
 
 If an invalid Item ID is entered, the following will be displayed:
 
-<Image Placeholder>
-
+![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
 After a valid Item ID, the user will be prompted for the quantity to add to inventory (must be a whole number greater than zero):
 
-<Image Placeholder>
-
-<Image Placeholder>
-
+![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
+![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
 Upon successful entry, the database will be updated with the entered quantity:
 
-<Image Placeholder>
-
+![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
 4. Add New Product
 
 The User will be prompted for the new item's name, department, price (must be a valid integer greater than zero), & quantity (must be a whole number greater than zero):
 
-<Image Placeholder>
-<Image Placeholder>
-<Image Placeholder>
-
+![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
 Upon successful entry, the database will be updated with the new data:
 
 <Image Placeholder>
