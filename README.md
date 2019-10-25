@@ -48,29 +48,40 @@ The user will be presented with a list of the current inventory:
 
 The user will be presented with a list of all items that have less than 5 in stock (if any):
 
-![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
+![Manager03.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager03.JPG)
 
 3. Add to Inventory
 
 The user will be prompted for the Item ID of the product that is to be restocked:
 
-![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
+![Manager04.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager04.JPG)
+
+The user will then be prompted for the quantity to add to inventory (must be a whole number greater than zero)
 
 If an invalid Item ID is entered, the following will be displayed:
 
-![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
-After a valid Item ID, the user will be prompted for the quantity to add to inventory (must be a whole number greater than zero):
+![Manager05.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager05.JPG)
 
-![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
-![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
+An invalid number will return:
+
+![Manager06.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager06.JPG)
+
 Upon successful entry, the database will be updated with the entered quantity:
 
-![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
+![Manager07.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager07.JPG)
+
 4. Add New Product
 
-The User will be prompted for the new item's name, department, price (must be a valid integer greater than zero), & quantity (must be a whole number greater than zero):
+The User will be prompted for the new item's name, department, price (must be a valid integer greater than zero), & quantity (must be a whole number greater than zero)
 
-![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)![Manager01.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager01.JPG)
+An invalid price will return:
+
+![Manager08.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager08.JPG)
+
+An invalid quantity will return:
+
+![Manager09.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager09.JPG)
+
 Upon successful entry, the database will be updated with the new data:
 
-<Image Placeholder>
+![Manager10.JPG](https://github.com/Skorgum/Bamazon/blob/master/Images/Manager10.JPG)
